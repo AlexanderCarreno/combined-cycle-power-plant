@@ -5,6 +5,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 
 from src.evaluation import model_evaluation
 from src.prediction import prediction_example
+from src.dataPreparation import data_preparation
 
 print('\n===================================================')
 print('=============== Ridge Regresion ================== ')
@@ -23,10 +24,7 @@ df_CCPP = pd.read_csv('resources/CCPP_data.csv')
 
 
 # 3) Data Preparation
-df_CCPP = df_CCPP.rename({'AT': 'T'}, axis=1)
-x = df_CCPP[['T', 'V', 'AP', 'RH']]
-y = df_CCPP['PE']
-
+x , y = data_preparation(df_CCPP)
 
 # 4) Modeling
 alpha = 1.0
