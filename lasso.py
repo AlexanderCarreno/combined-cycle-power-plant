@@ -28,7 +28,7 @@ x , y = data_preparation(df_CCPP)
 
 # 4) Modeling
 alpha = 1.0
-model = Lasso(alpha=1.0) 
+model = Lasso(alpha) 
 kfold = KFold(n_splits=5)
 
 mean_squared_errors = []
